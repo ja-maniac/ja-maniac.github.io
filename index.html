@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamania Colo's Personal Website yay!</title>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+            overflow-x: clip;
+        }
+        body {
+            font-family: "Helvetica Neue", sans-serif;
+            background-color: #fffdf3;
+            margin: 0;
+            padding: 0;
+            overflow-x: clip;
+        }
+        #thenavbar {
+            background-color: #ffed9e;
+            align-items: center;
+            padding: 5px;
+            position: sticky;
+            top: 0;
+            margin-top: 10px;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 20px;
+            gap: 10px;
+            overflow: hidden;
+            display: flex;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: #ffed9e;
+            flex-grow: 1;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #sitelogo {
+            height: 75px;
+            margin-left: 10px;
+        }
+        #sitelogo:hover {
+            transform: scale(0.9);
+            transition: transform 0.3s ease-in-out;
+        }
+        .button {
+            background-color: #E2BFFF;
+            padding: 10px;
+            padding-left: 18px;
+            padding-right: 18px;
+            border-radius: 5px;
+            border: #3c0574 solid 1px;
+            font-family: "Helvetica Neue", sans-serif;
+            text-decoration: none;
+            color: #3c0574;
+            font-size: large;
+        }
+        .button:hover {
+            background-color: #A656FF;
+            font-weight: 900;
+            color: #ffed9e;
+            font-size: larger;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #carousel-container, #carousel-container2 {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            height: fit-content;
+            background-color: #fffdf3;
+            overflow: hidden;
+        }
+        #JamaniaProfile {
+            width: 200px;
+        }
+        .longimg {
+            height: 375px;
+            margin: 20px auto;
+            display: inline-block;
+            border-radius: 10px;
+            margin: 0;
+        }
+        #carousel {
+            display: flex;
+            overflow: hidden;
+            gap: 10px;
+            padding: 0px;
+            width: max-content; 
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        #home {
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E2BFFF;
+        }
+        h1 {
+            font-family: "Gagalin";
+            color: #3c0574;
+            font-size: 80px;
+        }
+        h2 {
+            font-family: "Gagalin";
+            color: #fffdf3;
+            font-size: 68px;
+            margin-bottom: 25px;
+        }
+        h3 {
+            font-family: "Gagalin";
+            font-size: 40px;
+            color: #3c0574;
+            line-height: 1;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        h4 {
+            font-family: "Gagalin";
+            font-size: 40px;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        h6 {
+            font-family: "Gagalin";
+            color: #3c0574;
+            font-size: 68px;
+            margin-bottom: 25px;
+            margin-top: 60px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: #3c0574;
+            margin-top: 10px;
+            margin-left: 12px;
+        }
+        #popanimate {
+            animation: letter-pop 1s ease-out forwards;
+        }
+        @keyframes letter-pop {
+            0% {
+                transform: scale(0.6);
+            }
+            75% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        #funfacts, #favmovies {
+            background-color: #A656FF;
+            max-height: fit-content;
+            align-items: center;
+            justify-content: baseline;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        #favfoods, #myhobbies {
+            background-color: #E2BFFF;
+            max-height: fit-content;
+            align-items: center;
+            justify-content: baseline;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 10px;
+        }
+        #inside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: max-content;
+            gap: 10px;
+            padding: 10px;
+        }
+        .eachfact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #fffdf3;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0px;
+            border-radius: 5px;
+            height: 325px;
+            width: 258px;
+        }
+        .factimg {
+            height: 40%;
+            display: inline-block;
+            justify-content: center;
+            border-radius: 5px;
+            margin-left: 12px;
+        }
+        .factimg1 {
+            height: 42%;
+            display: inline-block;
+            justify-content: center;
+            border-radius: 5px;
+            margin-left: 12px;
+        }
+        .foodimg {
+            height: 370px;
+            width: 247px;
+            object-fit: cover;
+            display: inline-block;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .facttext {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+        .eachfact:hover, .eachfood:hover {
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .eachfood::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #b618ffa6;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+        .eachfood:hover::after {
+            opacity: 1;
+        }
+        .foodtext {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fffdf3;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 2;
+        }
+        .eachfood:hover .foodtext {
+            opacity: 1;
+        }
+        #mylinks {
+            background-color: #ffed9e;
+            max-height: fit-content;
+            align-items: center;
+            justify-content: baseline;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+        #mylinks ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            padding-inline-start: 0;
+            gap: 10px;
+            display: flex;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="thenavbar">
+        <nav>
+            <a href="#">
+                <img src="https://static.wixstatic.com/media/360acd_3ec339f540384bdcb8493fc896613c50~mv2.png/v1/crop/x_6,y_997,w_2298,h_391/fill/w_812,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/namesitelogo-bgremove.png" id="sitelogo" alt="Site Logo">
+            </a>
+            <ul>
+                <br>
+                <li><h5 class="button"><a href="#funfacts">FUN FACTS</a></h5></li>
+                <br>
+                <li><h5 class="button"><a href="#favfoods">FAVORITE FOODS</a></h5></li>
+                <br>
+                <li><h5 class="button"><a href="#favmovies">FAVORITE MOVIES</a></h5></li>
+                <br>
+                <li><h5 class="button"><a href="#myhobbies">MY HOBBIES</a></h5></li>
+                <br>
+                <li><h5 class="button"><a href="#mylinks">OTHER LINKS</a></h5></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="home">
+        <h1 id="popanimate">HEEEEYYYY THERE! WHAZZZUUUP?</h1>
+    </section>
+
+    <section id="carousel-container">
+        <div id="carousel">
+            <img src="img/img003.jpg" class="longimg">
+            <img src="img/img005.jpg" class="longimg">
+            <img src="img/img002.jpg" class="longimg">
+            <img src="img/img004.jpg" class="longimg">
+            <img src="img/img001.jpg" class="longimg">
+            <img src="img/img007.png" class="longimg">
+            <img src="img/img006.jpg" class="longimg">
+            <img src="img/img008.png" class="longimg">
+
+            <img src="img/img003.jpg" class="longimg">
+            <img src="img/img005.jpg" class="longimg">
+            <img src="img/img002.jpg" class="longimg">
+            <img src="img/img004.jpg" class="longimg">
+            <img src="img/img001.jpg" class="longimg">
+            <img src="img/img007.png" class="longimg">
+            <img src="img/img006.jpg" class="longimg">
+            <img src="img/img008.png" class="longimg">
+        </div>
+    </section>
+    
+    <section id="funfacts">
+        <h2>Fun Facts about Me!</h2>
+        <div id="inside">
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3> Fact #1</h3>
+                    <img src="https://www.brandonjbroderick.com/sites/default/files/styles/hero/public/2024-12/personal-injury-lawyer-boston-ma.jpg.webp?itok=seThdlsY" class="factimg">
+                    <p>I grew up in Florida my whole life, but I was actually born in Boston, Massachusetts!</p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3> Fact #2</h3>
+                    <img src="https://www.insdthane.com/wp-content/uploads/2022/03/y2k-fashion.jpg" class="factimg">
+                    <p>I realllllly like the 90s-Y2K aesthetic!</p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3> Fact #3</h3>
+                    <img src="https://wallpapers.com/images/hd/artwork-sailing-pirate-ship-0umsihy6sr9nhmiq.jpg" class="factimg">
+                    <p>Sea Shanties/Folk is my favorite genre of music!</p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3> Fact #4</h3>
+                    <img src="https://stanforddaily.com/wp-content/uploads/2012/10/Arthur-arthur-11714679-2560-1394.jpeg" class="factimg">
+                    <p>I've seen every Arthur episode/movie/book that exists (500+ episodes)</p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3> Fact #5</h3>
+                    <img src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00NTYtMDEwZC14LmpwZw.jpg" class="factimg">
+                    <p>Not a surprise, but my favorite color is PURPLE!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="favfoods">
+        <h2>My Favorite Foods</h2>
+        <div id="inside">
+            <div class="eachfood">
+                <img src="https://images.pexels.com/photos/13730505/pexels-photo-13730505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="foodimg">
+                <div class="foodtext">
+                    <h4>PIZZA</h4>
+                </div>
+            </div>
+            <div class="eachfood">
+                <img src="https://www.chick-fil-a.com/wp-content/uploads/sites/2/2025/06/OS_3Col2.png" class="foodimg">
+                <div class="foodtext">
+                    <h4>CHICK-FIL-A CHICKEN SANDWICH</h4>
+                </div>
+            </div>
+            <div class="eachfood">
+                <img src="https://www.allrecipes.com/thmb/1ukKgBIk8aD2fsUzSgytB8KQt8E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-Chicken-Nugget-Taste-Test-chick-fil-a-ddd208ad25114233969337b8e15955db.jpg" class="foodimg">
+                <div class="foodtext">
+                    <h4>CHICK-FIL-A NUGGETS</h4>
+                </div>
+            </div>
+            <div class="eachfood">
+                <img src="https://www.bakeandbacon.com/wp-content/uploads/2025/11/bacon-egg-wrap-8.jpg" class="foodimg">
+                <div class="foodtext">
+                    <h4>BACON EGG WRAP</h4>
+                </div>
+            </div>
+            <div class="eachfood">
+                <img src="https://preppykitchen.com/wp-content/uploads/2023/02/pancakes-feature-new.jpg" class="foodimg">
+                <div class="foodtext">
+                    <h4>PANCAKES</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="favmovies">
+        <h2>My Favorite Movies</h2>
+        <div id="caraousel-container2">
+            <div id="carousel">
+                <img src="https://m.media-amazon.com/images/I/91x4nWCLbwL._AC_UF1000,1000_QL80_.jpg" class="longimg">
+                <img src="https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png" class="longimg">
+                <img src="https://m.media-amazon.com/images/I/81pdX8QE5AL._AC_UF894,1000_QL80_.jpg" class="longimg">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTExNzU0MTM0OTBeQTJeQWpwZ15BbWU4MDUyOTQwODEx._V1_.jpg" class="longimg">
+                <img src="https://m.media-amazon.com/images/M/MV5BMzNmNjQ1NmUtNzhiZS00YWE2LTg4N2ItZTA2ODdmOTMwOTQ1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="longimg">
+                <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/oGYAAOSwLSRm1RS0/$_57.PNG?set_id=8800005007" class="longimg">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWFmYjAzOWItMTc1OC00ZTY3LTkyY2YtN2NhOGQ5MWM3MTY2XkEyXkFqcGc@._V1_.jpg" class="longimg">
+                <img src="https://ucnj.org/wp-content/uploads/2022/09/p_encanto_homeent_22359_4892ae1c.jpeg" class="longimg">
+
+                <img src="https://m.media-amazon.com/images/I/91x4nWCLbwL._AC_UF1000,1000_QL80_.jpg" class="longimg">
+                <img src="https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png" class="longimg">
+                <img src="https://m.media-amazon.com/images/I/81pdX8QE5AL._AC_UF894,1000_QL80_.jpg" class="longimg">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTExNzU0MTM0OTBeQTJeQWpwZ15BbWU4MDUyOTQwODEx._V1_.jpg" class="longimg">
+                <img src="https://m.media-amazon.com/images/M/MV5BMzNmNjQ1NmUtNzhiZS00YWE2LTg4N2ItZTA2ODdmOTMwOTQ1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="longimg">
+                <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/oGYAAOSwLSRm1RS0/$_57.PNG?set_id=8800005007" class="longimg">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWFmYjAzOWItMTc1OC00ZTY3LTkyY2YtN2NhOGQ5MWM3MTY2XkEyXkFqcGc@._V1_.jpg" class="longimg">
+                <img src="https://ucnj.org/wp-content/uploads/2022/09/p_encanto_homeent_22359_4892ae1c.jpeg" class="longimg">
+        </div>
+    </section>
+
+    <section id="myhobbies">
+        <h2>My Hobbies</h2>
+        <div id="inside">
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3>Hobby #1</h3>
+                    <img src="https://t3.ftcdn.net/jpg/12/69/70/54/360_F_1269705478_HBQguLw40gP6Q72y75auCcuFsNcBxhCT.jpg" class="factimg1">
+                    <p>I love art! Drawing, painting, crafting, you name it :)</p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3>Hobby #2</h3>
+                    <img src="https://draftscapes.com/wp-content/uploads/2019/08/books-1617327_640.jpg" class="factimg1">
+                    <p>I love to read! Unpopular opinion, but sometimes books >>> movies</p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3>Hobby #3</h3>
+                    <img src="https://media.clipchamp.com/clipchamp/3uWjYmP3plLrAxM6bkWB8l" class="factimg1">
+                    <p>I like to edit videos for my channels! <a href="https://www.youtube.com/@VibingwiththeMJs">@vibingwiththemjs</a> and <a href="https://www.youtube.com/@themjsquad">@themjsquadofficial</a></p>
+                </div>
+            </div>
+            <div class="eachfact">
+                <div class="facttext">
+                    <h3>Hobby #4</h3>
+                    <img src="https://a.storyblok.com/f/96206/5466x3687/fe63c4d055/ucd-pa-graphic-design-art-1.jpg/m/900x0/filters:quality/(60/)" class="factimg1">
+                    <p>Like most of you, I LOVE design! Graphics, web, social media, all of it!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mylinks">
+        <h6>Want More? Check Me Out!</h6>
+        <ul>
+            <li><h5 class="button"><a href="https://www.linkedin.com/in/jamaniacolo/">LINKEDIN PROFILE</a></h5></li>
+            <li><h5 class="button"><a href="https://jamaniacolo.wixsite.com/portfolio">DESIGN PORTFOLIO</a></h5></li>
+            <li><h5 class="button"><a href="https://www.youtube.com/@THEMJSQUAD">YOUTUBE CHANNEL</a></h5></li>
+        </ul>
+    </section>
+</body>
+
+</html>
